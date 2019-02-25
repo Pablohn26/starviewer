@@ -66,3 +66,11 @@ test_script:
     else {
         Add-AppveyorMessage "All tests OK"
     }
+deploy:
+  provider: S3
+  access_key_id:
+    secure: qZ6Uqj4N5GSnysNGZ4n/DYbSxBiSCJ3imaTkiPUU+PY=
+  secret_access_key:
+    secure: DJEyW6R+g4ek8r/8w6KwjIrxyHsjobWRRBZeeriDr5WMvv8qIutcjODrsElIiaDl
+  bucket: starviewer
+  folder: $(APPVEYOR_PROJECT_SLUG)/$(APPVEYOR_BUILD_VERSION)
